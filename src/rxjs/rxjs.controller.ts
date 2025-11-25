@@ -4,10 +4,10 @@ import { ParamText } from "./interfaces/params";
 
 @Controller("rxjs")
 export class RxjsController {
-  constructor(private rxjsService: RxjsService) {}
+  constructor(private readonly rxjsService: RxjsService) {}
 
-  @Get("repositories/")
-  repositories(@Query() params: ParamText) {
-    return this.rxjsService.searchRepositories(params.text, params.hub);
+  @Get("repositories")
+  repositories(@Query() { text, hub, count }: ParamText) {
+    return this.rxjsService.searchRepositories(text, hub, count);
   }
 }

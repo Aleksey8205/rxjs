@@ -1,4 +1,7 @@
+import { GitSearch } from "../rxjs.service";
+
 export interface ParamText {
     text: string;
-    hub: string;
+    hub: GitSearch;
+    count: number;
   }
